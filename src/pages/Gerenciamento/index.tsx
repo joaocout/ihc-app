@@ -6,16 +6,19 @@ import { styles } from './styles';
 
 import type { StackParamsList } from '../../shared/types';
 
-type DashBoardProps = NativeStackScreenProps<StackParamsList, 'Dashboard'>;
+type GerenciamentoProps = NativeStackScreenProps<
+  StackParamsList,
+  'Gerenciamento'
+>;
 
-const Dashboard = ({ navigation }: DashBoardProps) => (
+const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
   <View style={styles.container}>
-    <Text>Dashboard</Text>
+    <Text>Gerenciamento</Text>
     <Button
-      title="Gerenciamento"
-      onPress={() => navigation.navigate('Gerenciamento')}
+      title="Relatórios"
+      onPress={() => navigation.navigate('Relatórios')}
     />
   </View>
 );
 
-export default Dashboard;
+export default Gerenciamento;

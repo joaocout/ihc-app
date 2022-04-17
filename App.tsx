@@ -1,4 +1,5 @@
-import Entry from "./src/pages";
+import React from 'react';
+import Entry from './src/pages';
 
 const App = () => <Entry />;
 
