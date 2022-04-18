@@ -1,47 +1,21 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+// import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { styles } from './styles';
 
-import type { StackParamsList } from '../../shared/types';
-import { COLORS } from '../../shared/constants';
+import ProgressBar from '../../components';
+
+// import type { StackParamsList } from '../../shared/types';
 
 const CONFIG_ICON = require('../../../assets/config-icon.png');
 
-type DashBoardProps = NativeStackScreenProps<StackParamsList, 'Dashboard'>;
+// type DashBoardProps = NativeStackScreenProps<StackParamsList, 'Dashboard'>;
 
-const ProgressBar: React.FC<{ text: string; progress: number }> = ({
-  text,
-  progress,
-}) => (
-  <View
-    style={{
-      minHeight: 54,
-      backgroundColor: COLORS.GRAY_3,
-      alignSelf: 'stretch',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: 15,
-    }}>
-    <View
-      style={{
-        minHeight: 54,
-        backgroundColor: COLORS.BLUE,
-        position: 'absolute',
-        width: `${progress * 100}%`,
-        left: 0,
-        borderTopLeftRadius: 15,
-        borderBottomLeftRadius: 15,
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
-      }}
-    />
-    <Text style={{ color: 'white', fontWeight: 'bold' }}>{text}</Text>
-  </View>
-);
+const VALUE_1 = Math.random();
+const VALUE_2 = Math.random();
 
-const Dashboard = ({ navigation }: DashBoardProps) => (
+const Dashboard = () => (
   <View style={styles.container}>
     <View style={styles.textContainer}>
       <Text style={[styles.text, { flex: 0.75 }]}>
@@ -51,7 +25,7 @@ const Dashboard = ({ navigation }: DashBoardProps) => (
         <Image source={CONFIG_ICON} />
       </TouchableOpacity>
     </View>
-    <ProgressBar text="R$ 123,50" progress={0.67} />
+    <ProgressBar text="R$ 123,50" progress={VALUE_1} />
     <View style={styles.textContainer}>
       <Text style={[styles.text, { flex: 0.75 }]}>
         Consumo estimado agora em kWh (última hora)
@@ -60,8 +34,7 @@ const Dashboard = ({ navigation }: DashBoardProps) => (
         <Image source={CONFIG_ICON} />
       </TouchableOpacity>
     </View>
-    <ProgressBar text="5,5 kWh" progress={0.1} />
+    <ProgressBar text="5,5 kWh" progress={VALUE_2} />
   </View>
 );
-
 export default Dashboard;

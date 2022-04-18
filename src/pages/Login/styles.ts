@@ -7,42 +7,46 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.WHITE,
     paddingTop: 50,
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingHorizontal: 40,
   },
 
   text: {
-    fontStyle: 'normal',
-    fontWeight: '400',
-    fontSize: 14,
-    lineHeight: 17,
     textAlign: 'center',
     marginBottom: 50,
-    color: COLORS.GRAY_1
+    color: COLORS.GRAY_1,
   },
 
   button: {
-      backgroundColor: COLORS.BLUE,
-      borderRadius: 15,
-      marginBottom: 50,
-      width: 205,
-      height: 50,
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
+    backgroundColor: COLORS.BLUE,
+    borderRadius: 15,
+    marginBottom: 50,
+    minWidth: 205,
+    minHeight: 45,
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-    textButton: {color: COLORS.WHITE, fontWeight: 'bold'},
+  textButton: {
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+  },
 
-    input: {
-        borderColor: COLORS.BLUE,
-        borderWidth: 2,
-        borderRadius: 15,
-        marginBottom: 25,
-        width: 320,
-        height: 45,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingLeft: 15,
-      },
+  input: {
+    alignSelf: 'stretch',
+    borderColor: COLORS.BLUE,
+    borderWidth: 2,
+    borderRadius: 15,
+    marginBottom: 25,
+    minHeight: 45,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 12,
+    fontSize: 14,
+  },
 
-      textExtra:{color: COLORS.BLUE}
+  textExtra: { color: COLORS.BLUE, textAlign: 'center' },
 });
