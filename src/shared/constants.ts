@@ -4,4 +4,5 @@ export const COLORS = {
   WHITE: 'white',
   GRAY_1: '#777777',
   GRAY_2: '#DDDDDD',
+  GRAY_3: '#EEEEEE',
 };
