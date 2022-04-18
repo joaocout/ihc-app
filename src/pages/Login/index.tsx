@@ -45,7 +45,9 @@ const Login = ({ navigation }: LoginProps) => (
       onPress={() => navigation.navigate('Dashboard')}>
       <Text style={styles.textButton}>ENTRAR</Text>
     </TouchableOpacity>
-    <Text style={styles.textExtra}>Esqueci minha senha</Text>
+    <TouchableOpacity onPress={() => null}>
+      <Text style={styles.textExtra}>Esqueci minha senha</Text>
+    </TouchableOpacity>
   </KeyboardAvoidingView>
 );
 

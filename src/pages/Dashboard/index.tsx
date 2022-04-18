@@ -1,40 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-// import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { styles } from './styles';
 
-import ProgressBar from '../../components';
-
-// import type { StackParamsList } from '../../shared/types';
+import ProgressBar from '../../components/ProgressBar';
+import ConfigModal from '../../components/ConfigModal';
 
 const CONFIG_ICON = require('../../../assets/config-icon.png');
-
-// type DashBoardProps = NativeStackScreenProps<StackParamsList, 'Dashboard'>;
 
 const VALUE_1 = Math.random();
 const VALUE_2 = Math.random();
 
-const Dashboard = () => (
-  <View style={styles.container}>
-    <View style={styles.textContainer}>
-      <Text style={[styles.text, { flex: 0.75 }]}>
-        Consumo estimado neste mês em reais (até hoje)
-      </Text>
+const Dashboard = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={[styles.text, { flex: 0.75 }]}>
+          Consumo estimado neste mês em reais (até hoje)
+        </Text>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
+          <Image source={CONFIG_ICON} />
+        </TouchableOpacity>
+      </View>
+      <ProgressBar text="R$ 123,50" progress={VALUE_1} />
+      <View style={styles.textContainer}>
+        <Text style={[styles.text, { flex: 0.75 }]}>
+          Consumo estimado agora em kWh (última hora)
+        </Text>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
+          <Image source={CONFIG_ICON} />
+        </TouchableOpacity>
+      </View>
+      <ProgressBar text="5,5 kWh" progress={VALUE_2} />
       <TouchableOpacity onPress={() => null}>
-        <Image source={CONFIG_ICON} />
+        <Text style={styles.linkText}>
+          Estimativas incorretas?
+          {'\n'}
+          Reporte o problema clicando aqui, um dos nossos técnicos te ajudará a
+          resolver :)
+        </Text>
       </TouchableOpacity>
+      <ConfigModal
+        visible={modalVisible}
+        dismiss={() => setModalVisible(false)}
+      />
     </View>
-    <ProgressBar text="R$ 123,50" progress={VALUE_1} />
-    <View style={styles.textContainer}>
-      <Text style={[styles.text, { flex: 0.75 }]}>
-        Consumo estimado agora em kWh (última hora)
-      </Text>
-      <TouchableOpacity onPress={() => null}>
-        <Image source={CONFIG_ICON} />
-      </TouchableOpacity>
-    </View>
-    <ProgressBar text="5,5 kWh" progress={VALUE_2} />
-  </View>
-);
+  );
+};
+
 export default Dashboard;

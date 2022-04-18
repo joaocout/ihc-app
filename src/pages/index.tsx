@@ -14,7 +14,11 @@ const Stack = createNativeStackNavigator<StackParamsList>();
 const Entry = () => (
   <NavigationContainer>
     <Stack.Navigator id="Stack">
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="Gerenciamento" component={Gerenciamento} />
       <Stack.Screen name="Relatórios" component={Relatorios} />

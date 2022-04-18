@@ -21,4 +21,10 @@ export const styles = StyleSheet.create({
   text: {
     color: COLORS.GRAY_1,
   },
+
+  linkText: {
+    color: COLORS.BLUE,
+    textAlign: 'center',
+    marginTop: 50,
+  },
 });
