@@ -41,7 +41,7 @@ const ProgressBar: React.FC<{ text: string; progress: number }> = ({
   </View>
 );
 
-const Dashboard = () => (
+const Dashboard = ({ navigation }: DashBoardProps) => (
   <View style={styles.container}>
     <View style={styles.textContainer}>
       <Text style={[styles.text, { flex: 0.75 }]}>
@@ -61,6 +61,7 @@ const Dashboard = () => (
       </TouchableOpacity>
     </View>
     <ProgressBar text="R$ 123,50" progress={0.67} />
+    <Text onPress={() => navigation.navigate('Login')}>Login</Text>
   </View>
 );
 
