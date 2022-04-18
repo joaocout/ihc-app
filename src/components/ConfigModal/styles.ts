@@ -86,10 +86,12 @@ export const styles = StyleSheet.create({
     minWidth: 205,
     paddingVertical: 12,
     paddingHorizontal: 45,
+    marginTop: 30,
   },
 
   buttonText: {
     color: COLORS.WHITE,
     fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
 });
