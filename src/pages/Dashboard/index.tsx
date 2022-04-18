@@ -54,14 +54,13 @@ const Dashboard = ({ navigation }: DashBoardProps) => (
     <ProgressBar text="R$ 123,50" progress={0.67} />
     <View style={styles.textContainer}>
       <Text style={[styles.text, { flex: 0.75 }]}>
-        Consumo estimado neste mês em reais (até hoje)
+        Consumo estimado agora em kWh (última hora)
       </Text>
       <TouchableOpacity onPress={() => null}>
         <Image source={CONFIG_ICON} />
       </TouchableOpacity>
     </View>
-    <ProgressBar text="R$ 123,50" progress={0.67} />
-    <Text onPress={() => navigation.navigate('Login')}>Login</Text>
+    <ProgressBar text="5,5 kWh" progress={0.1} />
   </View>
 );
 
