@@ -1,17 +1,17 @@
 import React from "react";
-import { View, Text, Button, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { styles } from "./styles";
 
-import type { StackParamsList } from "../../shared/types";
+import type { GerenciamentoStackParamsList } from "../../shared/types";
 import { COLORS } from "../../shared/constants";
 
 const SOFA_ICON = require("../../../assets/sofa.png");
 const CAMA_ICON = require("../../../assets/cama.png");
 
 type GerenciamentoProps = NativeStackScreenProps<
-  StackParamsList,
+  GerenciamentoStackParamsList,
   "Gerenciamento"
 >;
 
