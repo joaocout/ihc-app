@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -21,11 +21,20 @@ import type {
   InitialStackParamsList,
 } from '../shared/types';
 
-const STACK_OPTIONS = { headerShadowVisible: false };
+const HeaderTitle = ({ title }: { title: string }) => (
+  <Text
+    style={{ textTransform: 'uppercase', fontSize: 28, fontWeight: 'bold' }}>
+    {title}
+  </Text>
+);
 
 const DashboardStack = createNativeStackNavigator<DashboardStackParamsList>();
 const DashboardRoute = () => (
-  <DashboardStack.Navigator screenOptions={STACK_OPTIONS}>
+  <DashboardStack.Navigator
+    screenOptions={{
+      // eslint-disable-next-line react/no-unstable-nested-components
+      headerTitle: ({ children }) => <HeaderTitle title={children} />,
+    }}>
     <DashboardStack.Screen name="Dashboard" component={Dashboard} />
   </DashboardStack.Navigator>
 );
@@ -33,7 +42,11 @@ const DashboardRoute = () => (
 const GereciamentoStack =
   createNativeStackNavigator<GerenciamentoStackParamsList>();
 const GerenciamentoRoute = () => (
-  <GereciamentoStack.Navigator screenOptions={STACK_OPTIONS}>
+  <GereciamentoStack.Navigator
+    screenOptions={{
+      // eslint-disable-next-line react/no-unstable-nested-components
+      headerTitle: ({ children }) => <HeaderTitle title={children} />,
+    }}>
     <GereciamentoStack.Screen name="Gerenciamento" component={Gerenciamento} />
     <GereciamentoStack.Screen name="Cômodo" component={Comodo} />
   </GereciamentoStack.Navigator>
@@ -41,7 +54,11 @@ const GerenciamentoRoute = () => (
 
 const RelatoriosStack = createNativeStackNavigator<RelatoriosStackParamsList>();
 const RelatoriosRoute = () => (
-  <RelatoriosStack.Navigator screenOptions={STACK_OPTIONS}>
+  <RelatoriosStack.Navigator
+    screenOptions={{
+      // eslint-disable-next-line react/no-unstable-nested-components
+      headerTitle: ({ children }) => <HeaderTitle title={children} />,
+    }}>
     <RelatoriosStack.Screen name="Relatórios" component={Relatorios} />
   </RelatoriosStack.Navigator>
 );
@@ -68,10 +85,7 @@ const TabNavigator = () => (
         if (route.name === 'GerenciamentoRoute') {
           return <Entypo name="menu" size={20} color={ICON_COLOR} />;
         }
-        if (route.name === 'RelatóriosRoute') {
-          return <AntDesign name="barschart" size={20} color={ICON_COLOR} />;
-        }
-        return <View />;
+        return <AntDesign name="barschart" size={20} color={ICON_COLOR} />;
       },
     })}>
     <Tab.Screen
