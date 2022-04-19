@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { Text, TouchableOpacity, Image, View } from "react-native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import React, { useState } from 'react';
+import { Text, TouchableOpacity, Image, View } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
-import ConfigModal from "../../components/ConfigModal";
+import ConfigModal from '../../components/ConfigModal';
 
-import type { GerenciamentoStackParamsList } from "../../shared/types";
+import type { GerenciamentoStackParamsList } from '../../shared/types';
 
 type ComodoProps = NativeStackScreenProps<
   GerenciamentoStackParamsList,
-  "Cômodo"
+  'Cômodo'
 >;
 
-const TELEVISION_ICON = require("../../../assets/television.png");
-const AR_ICON = require("../../../assets/ar-condicionado.png");
-const LAMPADA_ICON = require("../../../assets/lampada.png");
+const TELEVISION_ICON = require('../../../assets/television.png');
+const AR_ICON = require('../../../assets/ar-condicionado.png');
+const LAMPADA_ICON = require('../../../assets/lampada.png');
 
 const Comodo = ({ navigation }: ComodoProps) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -25,8 +25,7 @@ const Comodo = ({ navigation }: ComodoProps) => {
         <TouchableOpacity
           onPress={() => {
             setModalVisible(!modalVisible);
-          }}
-        >
+          }}>
           <Text style={styles.mediumNumber}>+</Text>
         </TouchableOpacity>
         <Text style={styles.text}>

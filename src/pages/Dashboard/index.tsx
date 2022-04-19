@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { Entypo } from "@expo/vector-icons";
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
-import ProgressBar from "../../components/ProgressBar";
-import ConfigModal from "../../components/ConfigModal";
-import { COLORS } from "../../shared/constants";
+import ProgressBar from '../../components/ProgressBar';
+import ConfigModal from '../../components/ConfigModal';
+import { COLORS } from '../../shared/constants';
 
-import type { DashboardStackParamsList } from "../../shared/types";
+import type { DashboardStackParamsList } from '../../shared/types';
 
 const VALUE_1 = Math.random();
 const VALUE_2 = Math.random();
 
 type DashboardProps = NativeStackScreenProps<
   DashboardStackParamsList,
-  "Dashboard"
+  'Dashboard'
 >;
 
 const Dashboard = ({ navigation }: DashboardProps) => {
@@ -45,7 +45,7 @@ const Dashboard = ({ navigation }: DashboardProps) => {
       <TouchableOpacity onPress={() => null}>
         <Text style={styles.linkText}>
           Estimativas incorretas?
-          {"\n"}
+          {'\n'}
           Reporte o problema clicando aqui, um dos nossos técnicos te ajudará a
           resolver :)
         </Text>

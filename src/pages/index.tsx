@@ -1,9 +1,9 @@
-import React from "react";
-import { View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Foundation, AntDesign, Entypo } from "@expo/vector-icons";
+import React from 'react';
+import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Foundation, AntDesign, Entypo } from '@expo/vector-icons';
 
 import Dashboard from './Dashboard';
 import Gerenciamento from './Gerenciamento';
@@ -17,8 +17,8 @@ import type {
   GerenciamentoStackParamsList,
   RelatoriosStackParamsList,
   InitialStackParamsList,
-} from "../shared/types";
-import { COLORS } from "../shared/constants";
+} from '../shared/types';
+import { COLORS } from '../shared/constants';
 
 const DashboardStack = createNativeStackNavigator<DashboardStackParamsList>();
 const DashboardRoute = () => (
@@ -47,38 +47,37 @@ const Tab = createBottomTabNavigator<TabParamsList>();
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
-      tabBarLabelStyle: { textTransform: "uppercase", fontWeight: "bold" },
+      tabBarLabelStyle: { textTransform: 'uppercase', fontWeight: 'bold' },
       tabBarActiveTintColor: COLORS.BLUE,
       headerShown: false,
       headerTintColor: COLORS.BLUE,
       // eslint-disable-next-line react/no-unstable-nested-components
       tabBarIcon: ({ focused }) => {
         const ICON_COLOR = focused ? COLORS.BLUE : COLORS.GRAY_2;
-        if (route.name === "DashboardRoute") {
+        if (route.name === 'DashboardRoute') {
           return <Foundation name="home" size={20} color={ICON_COLOR} />;
         }
-        if (route.name === "GerenciamentoRoute") {
+        if (route.name === 'GerenciamentoRoute') {
           return <Entypo name="menu" size={20} color={ICON_COLOR} />;
         }
-        if (route.name === "RelatóriosRoute") {
+        if (route.name === 'RelatóriosRoute') {
           return <AntDesign name="barschart" size={20} color={ICON_COLOR} />;
         }
         return <View />;
       },
-    })}
-  >
+    })}>
     <Tab.Screen
-      options={{ title: "Dashboard" }}
+      options={{ title: 'Dashboard' }}
       name="DashboardRoute"
       component={DashboardRoute}
     />
     <Tab.Screen
-      options={{ title: "Gerenciamento" }}
+      options={{ title: 'Gerenciamento' }}
       name="GerenciamentoRoute"
       component={GerenciamentoRoute}
     />
     <Tab.Screen
-      options={{ title: "Relatórios" }}
+      options={{ title: 'Relatórios' }}
       name="RelatóriosRoute"
       component={RelatoriosRoute}
     />

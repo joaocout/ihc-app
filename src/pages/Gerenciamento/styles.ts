@@ -1,59 +1,59 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-import { COLORS } from "../../shared/constants";
+import { COLORS } from '../../shared/constants';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.WHITE,
-    alignItems: "center",
+    alignItems: 'center',
     paddingHorizontal: 40,
   },
 
   text: {
-    textAlign: "center",
+    textAlign: 'center',
     color: COLORS.GRAY_1,
     marginVertical: 50,
   },
 
   textBottom: {
-    textAlign: "center",
+    textAlign: 'center',
     color: COLORS.BLUE,
   },
 
   bigNumber: {
     fontSize: 60,
-    fontWeight: "bold",
-    alignSelf: "center",
+    fontWeight: 'bold',
+    alignSelf: 'center',
     borderBottomWidth: 5,
     includeFontPadding: false,
   },
 
   underLine: {
     fontSize: 80,
-    fontWeight: "bold",
-    alignSelf: "center",
+    fontWeight: 'bold',
+    alignSelf: 'center',
     lineHeight: 10,
   },
 
-  textExtra: { color: COLORS.BLUE, textAlign: "center" },
+  textExtra: { color: COLORS.BLUE, textAlign: 'center' },
 
   mediumNumber: {
     fontSize: 30,
-    fontWeight: "bold",
-    alignSelf: "center",
+    fontWeight: 'bold',
+    alignSelf: 'center',
     marginBottom: 10,
     marginHorizontal: 10,
   },
 
   textMiniContainer: {
     paddingVertical: 25,
-    textAlign: "center",
+    textAlign: 'center',
     color: COLORS.GRAY_1,
   },
 
   miniContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginVertical: 30,
     marginHorizontal: 40,
   },
@@ -66,14 +66,14 @@ export const styles = StyleSheet.create({
     minHeight: 100,
     paddingVertical: 15,
     paddingHorizontal: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
 
   textButton: {
     color: COLORS.WHITE,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 20,
   },
 });

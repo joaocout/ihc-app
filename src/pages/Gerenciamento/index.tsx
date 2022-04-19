@@ -1,18 +1,18 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
-import type { GerenciamentoStackParamsList } from "../../shared/types";
-import { COLORS } from "../../shared/constants";
+import type { GerenciamentoStackParamsList } from '../../shared/types';
+import { COLORS } from '../../shared/constants';
 
-const SOFA_ICON = require("../../../assets/sofa.png");
-const CAMA_ICON = require("../../../assets/cama.png");
+const SOFA_ICON = require('../../../assets/sofa.png');
+const CAMA_ICON = require('../../../assets/cama.png');
 
 type GerenciamentoProps = NativeStackScreenProps<
   GerenciamentoStackParamsList,
-  "Gerenciamento"
+  'Gerenciamento'
 >;
 
 const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
@@ -22,11 +22,10 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
     </Text>
     <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate("Cômodo")}
-    >
+      onPress={() => navigation.navigate('Cômodo')}>
       <Image source={SOFA_ICON} />
       <View style={{ marginLeft: 15 }}>
-        <Text style={{ color: COLORS.WHITE, fontWeight: "bold" }}>
+        <Text style={{ color: COLORS.WHITE, fontWeight: 'bold' }}>
           SALA DE ESTAR
         </Text>
         <Text style={{ color: COLORS.WHITE }}>3 aparelhos ligados</Text>
@@ -35,11 +34,10 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
     </TouchableOpacity>
     <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate("Cômodo")}
-    >
+      onPress={() => navigation.navigate('Cômodo')}>
       <Image source={CAMA_ICON} />
       <View style={{ marginLeft: 15 }}>
-        <Text style={{ color: COLORS.WHITE, fontWeight: "bold" }}>
+        <Text style={{ color: COLORS.WHITE, fontWeight: 'bold' }}>
           QUARTO DO VÍTOR
         </Text>
         <Text style={{ color: COLORS.WHITE }}>Nenhum aparelho ligado</Text>

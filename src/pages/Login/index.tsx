@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import {
   Text,
   TouchableOpacity,
   TextInput,
   KeyboardAvoidingView,
-} from "react-native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+} from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
-import { COLORS } from "../../shared/constants";
+import { COLORS } from '../../shared/constants';
 
-import type { InitialStackParamsList } from "../../shared/types";
+import type { InitialStackParamsList } from '../../shared/types';
 
-type LoginProps = NativeStackScreenProps<InitialStackParamsList, "Login">;
+type LoginProps = NativeStackScreenProps<InitialStackParamsList, 'Login'>;
 
 const Login = ({ navigation }: LoginProps) => (
   <KeyboardAvoidingView behavior="position" style={styles.container}>
@@ -24,9 +24,8 @@ const Login = ({ navigation }: LoginProps) => (
     <TouchableOpacity
       style={styles.button}
       onPress={() =>
-        navigation.reset({ index: 0, routes: [{ name: "TabNavigator" }] })
-      }
-    >
+        navigation.reset({ index: 0, routes: [{ name: 'TabNavigator' }] })
+      }>
       <Text style={styles.textButton}>LER CÓDIGO</Text>
     </TouchableOpacity>
     <Text style={styles.text}>
@@ -46,9 +45,8 @@ const Login = ({ navigation }: LoginProps) => (
     <TouchableOpacity
       style={[styles.button, { marginBottom: 25 }]}
       onPress={() =>
-        navigation.reset({ index: 0, routes: [{ name: "TabNavigator" }] })
-      }
-    >
+        navigation.reset({ index: 0, routes: [{ name: 'TabNavigator' }] })
+      }>
       <Text style={styles.textButton}>ENTRAR</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => null}>
