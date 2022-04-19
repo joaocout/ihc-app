@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { styles } from "./styles";
 
@@ -8,10 +9,17 @@ import ProgressBar from "../../components/ProgressBar";
 import ConfigModal from "../../components/ConfigModal";
 import { COLORS } from "../../shared/constants";
 
+import type { DashboardStackParamsList } from "../../shared/types";
+
 const VALUE_1 = Math.random();
 const VALUE_2 = Math.random();
 
-const Dashboard = () => {
+type DashboardProps = NativeStackScreenProps<
+  DashboardStackParamsList,
+  "Dashboard"
+>;
+
+const Dashboard = ({ navigation }: DashboardProps) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (

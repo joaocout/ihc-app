@@ -5,10 +5,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Foundation, AntDesign, Entypo } from "@expo/vector-icons";
 
-import Dashboard from "./Dashboard";
-import Gerenciamento from "./Gerenciamento";
-import Relatorios from "./Relatorios";
-import Login from "./Login";
+import Dashboard from './Dashboard';
+import Gerenciamento from './Gerenciamento';
+import Relatorios from './Relatorios';
+import Login from './Login';
+import Comodo from './Comodo';
 
 import type {
   DashboardStackParamsList,
@@ -31,6 +32,7 @@ const GereciamentoStack =
 const GerenciamentoRoute = () => (
   <GereciamentoStack.Navigator>
     <GereciamentoStack.Screen name="Gerenciamento" component={Gerenciamento} />
+    <GereciamentoStack.Screen name="Cômodo" component={Comodo} />
   </GereciamentoStack.Navigator>
 );
 

@@ -10,6 +10,7 @@ export type DashboardStackParamsList = {
 
 export type GerenciamentoStackParamsList = {
   Gerenciamento: undefined;
+  Cômodo: undefined;
 };
 
 export type RelatoriosStackParamsList = {
