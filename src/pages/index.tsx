@@ -22,7 +22,7 @@ import { COLORS } from '../shared/constants';
 
 const DashboardStack = createNativeStackNavigator<DashboardStackParamsList>();
 const DashboardRoute = () => (
-  <DashboardStack.Navigator>
+  <DashboardStack.Navigator screenOptions={{}}>
     <DashboardStack.Screen name="Dashboard" component={Dashboard} />
   </DashboardStack.Navigator>
 );
@@ -47,6 +47,11 @@ const Tab = createBottomTabNavigator<TabParamsList>();
 const TabNavigator = () => (
   <Tab.Navigator
     screenOptions={({ route }) => ({
+      tabBarStyle: {
+        elevation: 0,
+        paddingHorizontal: 30,
+        borderTopWidth: 0,
+      },
       tabBarLabelStyle: { textTransform: 'uppercase', fontWeight: 'bold' },
       tabBarActiveTintColor: COLORS.BLUE,
       headerShown: false,

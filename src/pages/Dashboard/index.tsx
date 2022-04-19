@@ -11,8 +11,8 @@ import { COLORS } from '../../shared/constants';
 
 import type { DashboardStackParamsList } from '../../shared/types';
 
-const VALUE_1 = Math.random();
-const VALUE_2 = Math.random();
+const VALUE_1 = Math.min(Math.max(Math.random(), 0.1), 0.9);
+const VALUE_2 = Math.min(Math.max(Math.random(), 0.1), 0.9);
 
 type DashboardProps = NativeStackScreenProps<
   DashboardStackParamsList,
