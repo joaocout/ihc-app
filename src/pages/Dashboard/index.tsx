@@ -11,7 +11,7 @@ const CONFIG_ICON = require('../../../assets/config-icon.png');
 const VALUE_1 = Math.random();
 const VALUE_2 = Math.random();
 
-const Dashboard = () => {
+const Dashboard = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -42,6 +42,12 @@ const Dashboard = () => {
           resolver :)
         </Text>
       </TouchableOpacity>
+      <Text
+        onPress={() => {
+          navigation.navigate('Cômodo');
+        }}>
+        Visualizar Comodos
+      </Text>
       <ConfigModal
         visible={modalVisible}
         dismiss={() => setModalVisible(false)}

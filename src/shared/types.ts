@@ -3,4 +3,5 @@ export type StackParamsList = {
   Gerenciamento: undefined;
   Relatórios: undefined;
   Login: undefined;
+  Cômodo: undefined;
 };

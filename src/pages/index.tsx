@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import Gerenciamento from './Gerenciamento';
 import Relatorios from './Relatorios';
 import Login from './Login';
+import Comodo from './Comodo';
 
 import type { StackParamsList } from '../shared/types';
 
@@ -22,6 +23,7 @@ const Entry = () => (
       <Stack.Screen name="Dashboard" component={Dashboard} />
       <Stack.Screen name="Gerenciamento" component={Gerenciamento} />
       <Stack.Screen name="Relatórios" component={Relatorios} />
+      <Stack.Screen name="Cômodo" component={Comodo} />
     </Stack.Navigator>
   </NavigationContainer>
 );
