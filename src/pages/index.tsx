@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Foundation, AntDesign, Entypo } from '@expo/vector-icons';
 
+import { COLORS } from '../shared/constants';
+
 import Dashboard from './Dashboard';
 import Gerenciamento from './Gerenciamento';
 import Relatorios from './Relatorios';
@@ -18,11 +20,12 @@ import type {
   RelatoriosStackParamsList,
   InitialStackParamsList,
 } from '../shared/types';
-import { COLORS } from '../shared/constants';
+
+const STACK_OPTIONS = { headerShadowVisible: false };
 
 const DashboardStack = createNativeStackNavigator<DashboardStackParamsList>();
 const DashboardRoute = () => (
-  <DashboardStack.Navigator screenOptions={{}}>
+  <DashboardStack.Navigator screenOptions={STACK_OPTIONS}>
     <DashboardStack.Screen name="Dashboard" component={Dashboard} />
   </DashboardStack.Navigator>
 );
@@ -30,7 +33,7 @@ const DashboardRoute = () => (
 const GereciamentoStack =
   createNativeStackNavigator<GerenciamentoStackParamsList>();
 const GerenciamentoRoute = () => (
-  <GereciamentoStack.Navigator>
+  <GereciamentoStack.Navigator screenOptions={STACK_OPTIONS}>
     <GereciamentoStack.Screen name="Gerenciamento" component={Gerenciamento} />
     <GereciamentoStack.Screen name="Cômodo" component={Comodo} />
   </GereciamentoStack.Navigator>
@@ -38,7 +41,7 @@ const GerenciamentoRoute = () => (
 
 const RelatoriosStack = createNativeStackNavigator<RelatoriosStackParamsList>();
 const RelatoriosRoute = () => (
-  <RelatoriosStack.Navigator>
+  <RelatoriosStack.Navigator screenOptions={STACK_OPTIONS}>
     <RelatoriosStack.Screen name="Relatórios" component={Relatorios} />
   </RelatoriosStack.Navigator>
 );
