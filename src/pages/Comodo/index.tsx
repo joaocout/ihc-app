@@ -13,9 +13,9 @@ import { styles } from './styles';
 
 import ConfigModal from '../../components/ConfigModal';
 
-import type { StackParamsList } from '../../shared/types';
+import type { GerenciamentoStackParamsList } from '../../shared/types';
 
-type ComodoProps = NativeStackScreenProps<StackParamsList, 'Cômodo'>;
+type ComodoProps = NativeStackScreenProps<GerenciamentoStackParamsList, 'Cômodo'>;
 
 const TELEVISION_ICON = require('../../../assets/television.png');
 const AR_ICON = require('../../../assets/ar-condicionado.png');

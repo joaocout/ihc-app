@@ -1,23 +1,20 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React from "react";
+import { View, Text, Button } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
-import type { StackParamsList } from '../../shared/types';
+import type { StackParamsList } from "../../shared/types";
 
 type GerenciamentoProps = NativeStackScreenProps<
   StackParamsList,
-  'Gerenciamento'
+  "Gerenciamento"
 >;
 
 const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
   <View style={styles.container}>
     <Text>Gerenciamento</Text>
-    <Button
-      title="Relatórios"
-      onPress={() => navigation.navigate('Relatórios')}
-    />
+    <Button title="Relatórios" onPress={() => navigation.navigate("Cômodo")} />
   </View>
 );
 

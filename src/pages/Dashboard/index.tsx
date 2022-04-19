@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
-import ProgressBar from '../../components/ProgressBar';
-import ConfigModal from '../../components/ConfigModal';
+import ProgressBar from "../../components/ProgressBar";
+import ConfigModal from "../../components/ConfigModal";
+import { DashboardStackParamsList } from "../../shared/types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const CONFIG_ICON = require('../../../assets/config-icon.png');
+const CONFIG_ICON = require("../../../assets/config-icon.png");
 
 const VALUE_1 = Math.random();
 const VALUE_2 = Math.random();
 
-const Dashboard = ({ navigation }) => {
+type DashboardProps = NativeStackScreenProps<
+  DashboardStackParamsList,
+  "Dashboard"
+>;
+
+const Dashboard = ({ navigation }: DashboardProps) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -37,17 +44,11 @@ const Dashboard = ({ navigation }) => {
       <TouchableOpacity onPress={() => null}>
         <Text style={styles.linkText}>
           Estimativas incorretas?
-          {'\n'}
+          {"\n"}
           Reporte o problema clicando aqui, um dos nossos técnicos te ajudará a
           resolver :)
         </Text>
       </TouchableOpacity>
-      <Text
-        onPress={() => {
-          navigation.navigate('Cômodo');
-        }}>
-        Visualizar Comodos
-      </Text>
       <ConfigModal
         visible={modalVisible}
         dismiss={() => setModalVisible(false)}
