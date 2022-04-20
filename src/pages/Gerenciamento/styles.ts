@@ -11,9 +11,9 @@ export const styles = StyleSheet.create({
   },
 
   text: {
-    textAlign: 'center',
+    alignSelf: 'stretch',
     color: COLORS.GRAY_1,
-    marginVertical: 50,
+    marginVertical: 30,
   },
 
   textBottom: {
@@ -58,16 +58,14 @@ export const styles = StyleSheet.create({
     marginHorizontal: 40,
   },
 
-  button: {
+  card: {
+    alignSelf: 'stretch',
     backgroundColor: COLORS.BLUE,
     borderRadius: 15,
     marginBottom: 30,
-    minWidth: 340,
-    minHeight: 100,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
+    paddingVertical: 20,
+    paddingHorizontal: 40,
     alignItems: 'center',
-    justifyContent: 'center',
     flexDirection: 'row',
   },
 
