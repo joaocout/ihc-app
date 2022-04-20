@@ -22,7 +22,9 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
     </Text>
     <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate('Cômodo')}>
+      onPress={() =>
+        navigation.navigate('Cômodo', { title: 'SALA DE ESTAR', type: 1 })
+      }>
       <Image source={SOFA_ICON} />
       <View style={{ marginLeft: 15 }}>
         <Text style={{ color: COLORS.WHITE, fontWeight: 'bold' }}>
@@ -34,7 +36,9 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
     </TouchableOpacity>
     <TouchableOpacity
       style={styles.button}
-      onPress={() => navigation.navigate('Cômodo')}>
+      onPress={() =>
+        navigation.navigate('Cômodo', { title: 'QUARTO DO VÍTOR', type: 2 })
+      }>
       <Image source={CAMA_ICON} />
       <View style={{ marginLeft: 15 }}>
         <Text style={{ color: COLORS.WHITE, fontWeight: 'bold' }}>

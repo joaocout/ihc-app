@@ -56,7 +56,7 @@ const Dashboard = ({ navigation }: DashboardProps) => {
         <Text style={[styles.text, { flex: 0.75 }]}>
           Consumo estimado agora em kWh (última hora)
         </Text>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
+        <TouchableOpacity onPress={() => setModalVisible2(true)}>
           <Entypo name="cog" size={20} color={COLORS.GRAY_1} />
         </TouchableOpacity>
       </View>
@@ -75,12 +75,12 @@ const Dashboard = ({ navigation }: DashboardProps) => {
       <ConfigModal
         visible={modalVisible}
         dismiss={() => setModalVisible(false)}
-        changeUnit={(index) => setunidadeMedida1(index, VALUE_1)}
+        changeUnit={(index) => setunidadeMedida1(index)}
       />
       <ConfigModal
         visible={modalVisible2}
         dismiss={() => setModalVisible2(false)}
-        changeUnit={(index) => setunidadeMedida2(index, VALUE_2)}
+        changeUnit={(index) => setunidadeMedida2(index)}
       />
     </View>
   );

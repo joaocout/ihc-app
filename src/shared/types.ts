@@ -1,3 +1,5 @@
+import { int32ARGBColor } from 'react-native-svg';
+
 export type TabParamsList = {
   DashboardRoute: undefined;
   GerenciamentoRoute: undefined;
@@ -10,7 +12,10 @@ export type DashboardStackParamsList = {
 
 export type GerenciamentoStackParamsList = {
   Gerenciamento: undefined;
-  Cômodo: undefined;
+  Cômodo: {
+    title: string;
+    type: number;
+  };
 };
 
 export type RelatoriosStackParamsList = {
