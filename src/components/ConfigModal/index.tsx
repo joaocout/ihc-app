@@ -14,6 +14,7 @@ import { styles } from './styles';
 type ConfigModalProps = {
   visible: boolean;
   dismiss: () => void;
+  changeUnit: () => void;
 };
 
 const radioButtonText = [
@@ -22,7 +23,7 @@ const radioButtonText = [
   'kg de CO2 (emissão de gás carbônico)',
 ];
 
-const ConfigModal = ({ visible, dismiss }: ConfigModalProps) => {
+const ConfigModal = ({ visible, dismiss, changeUnit }: ConfigModalProps) => {
   const [selectedButton, setSelectedButton] = useState(0);
 
   return (
@@ -38,7 +39,11 @@ const ConfigModal = ({ visible, dismiss }: ConfigModalProps) => {
                 <Text style={styles.sectionTitle}>Unidade de medida</Text>
                 {radioButtonText.map((item, index) => (
                   <View key={item} style={styles.radioButtonContainer}>
-                    <TouchableOpacity onPress={() => setSelectedButton(index)}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        setSelectedButton(index);
+                        changeUnit(index);
+                      }}>
                       <View
                         style={[
                           styles.radioButtonIcon,

@@ -51,6 +51,7 @@ const Comodo = ({ navigation }: ComodoProps) => {
       <ConfigModal
         visible={modalVisible}
         dismiss={() => setModalVisible(false)}
+        changeUnit={() => null}
       />
     </View>
   );
