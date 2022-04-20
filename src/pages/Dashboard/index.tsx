@@ -22,11 +22,11 @@ type DashboardProps = NativeStackScreenProps<
 function mudaUnidadeMedida(unidade: number, valor: number) {
   switch (unidade) {
     case 0:
-      return 'kWz ' + (valor * 100).toFixed(2).toString();
+      return `${(valor * 100).toFixed(2).toString()} kWh`;
     case 1:
-      return 'R$ ' + (valor * 100 * 9.5).toFixed(2).toString();
+      return `R$ ${(valor * 100 * 9.5).toFixed(2).toString()}`;
     case 2:
-      return 'kg/CO2 ' + (valor * 100 * 0.233).toFixed(2).toString();
+      return `${(valor * 100 * 0.233).toFixed(2).toString()} kg de CO2`;
     default:
       return '';
   }
@@ -35,8 +35,8 @@ function mudaUnidadeMedida(unidade: number, valor: number) {
 const Dashboard = ({ navigation }: DashboardProps) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisible2, setModalVisible2] = useState(false);
-  const [unidadeMedida1, setunidadeMedida1] = useState(0); //0=kWz - 1=R$ - 2=kg de CO2
-  const [unidadeMedida2, setunidadeMedida2] = useState(0); //0=kWz - 1=R$ - 2=kg de CO2
+  const [unidadeMedida1, setunidadeMedida1] = useState(0); // 0=kWz - 1=R$ - 2=kg de CO2
+  const [unidadeMedida2, setunidadeMedida2] = useState(0); // 0=kWz - 1=R$ - 2=kg de CO2
 
   return (
     <View style={styles.container}>
