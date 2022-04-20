@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, Dimensions, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
 import { styles } from './styles';
@@ -8,25 +14,15 @@ import { COLORS } from '../../shared/constants';
 
 const Relatorios = () => (
   <View style={styles.container}>
-    <ScrollView style={{ paddingHorizontal: 30 }}>
-      <Text style={{ color: COLORS.GRAY_1, marginTop: 20 }}>
-        Aqui você encontra alguns Relatórios
-        {'\n'} e pode também gerar um personalizado de sua residência.
+    <ScrollView
+      style={styles.scrollContainer}
+      contentContainerStyle={styles.contentContainer}>
+      <Text style={styles.descriptionText}>
+        Aqui você encontra alguns relatórios e pode também gerar novos
+        relatórios personalizados, caso deseje.
       </Text>
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginVertical: 20,
-        }}>
-        <Text
-          style={{
-            fontWeight: 'bold',
-            color: COLORS.GRAY_1,
-            textTransform: 'uppercase',
-            fontSize: 16,
-            textAlign: 'center',
-          }}>
+      <View style={styles.chartContainer}>
+        <Text style={styles.chartTitle}>
           Consumo registrado nos últimos meses
         </Text>
         <LineChart
@@ -67,20 +63,8 @@ const Relatorios = () => (
           }}
         />
       </View>
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginVertical: 20,
-        }}>
-        <Text
-          style={{
-            fontWeight: 'bold',
-            color: COLORS.GRAY_1,
-            textTransform: 'uppercase',
-            fontSize: 16,
-            textAlign: 'center',
-          }}>
+      <View style={styles.chartContainer}>
+        <Text style={styles.chartTitle}>
           Consumo registrado nos últimos dias
         </Text>
         <LineChart
@@ -121,6 +105,19 @@ const Relatorios = () => (
           }}
         />
       </View>
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Gerar novos relatórios</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => null}>
+        <Text style={{ textAlign: 'center', color: COLORS.BLUE }}>
+          Estimativas incorretas?
+          {'\n'}
+          Reporte o problema clicando aqui, um dos nossos técnicos te ajudará a
+          resolver :)
+        </Text>
+      </TouchableOpacity>
     </ScrollView>
   </View>
 );

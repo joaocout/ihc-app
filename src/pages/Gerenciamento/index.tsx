@@ -44,10 +44,12 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
         <Text style={{ color: COLORS.WHITE }}>MÉDIA DE CONSUMO: 0 kWh</Text>
       </View>
     </TouchableOpacity>
-    <Text style={styles.textBottom}>
-      Caso deseje que nosso sistema seja instalado em outros cômodos, entre em
-      contato conosco por aqui.
-    </Text>
+    <TouchableOpacity onPress={() => null}>
+      <Text style={styles.textBottom}>
+        Caso deseje que nosso sistema seja instalado em outros cômodos, entre em
+        contato conosco por aqui.
+      </Text>
+    </TouchableOpacity>
   </View>
 );
 
