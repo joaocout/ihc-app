@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity, Image, View, ScrollView } from 'react-native';
+import { Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import {
+  Entypo,
+  FontAwesome,
+  MaterialIcons,
+  MaterialCommunityIcons,
+} from '@expo/vector-icons';
 
 import { styles } from './styles';
 
 import ConfigModal from '../../components/ConfigModal';
 
 import type { GerenciamentoStackParamsList } from '../../shared/types';
+import { COLORS } from '../../shared/constants';
 
 type ComodoProps = NativeStackScreenProps<
   GerenciamentoStackParamsList,
   'Cômodo'
 >;
 
-const TELEVISION_ICON = require('../../../assets/television.png');
-const AR_ICON = require('../../../assets/ar-condicionado.png');
-const LAMPADA_ICON = require('../../../assets/lampada.png');
+// const TELEVISION_ICON = require('../../../assets/television.png');
+// const AR_ICON = require('../../../assets/ar-condicionado.png');
+// const LAMPADA_ICON = require('../../../assets/lampada.png');
 
 const Comodo = ({ navigation, route }: ComodoProps) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -28,49 +34,154 @@ const Comodo = ({ navigation, route }: ComodoProps) => {
   }, []);
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <View style={{ marginBottom: 50 }}>
-          <TouchableOpacity
-            onPress={() => {
-              setModalVisible(!modalVisible);
+    <View style={{ flex: 1 }}>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{
+          flexGrow: 1,
+          padding: 30,
+          backgroundColor: COLORS.WHITE,
+        }}>
+        <View style={{}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}>
-            <Text style={styles.mediumNumber}>+</Text>
-          </TouchableOpacity>
-          <Text style={styles.text}>
-            Quanditade de dispositivos consumindo energia no momento:
-          </Text>
-          <Text style={styles.bigNumber}>3</Text>
+            <Text style={[styles.text, { flexShrink: 1 }]}>
+              Quanditade de dispositivos conectados no nosso sistema, e
+              consumindo energia no momento:
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Entypo name="circle-with-plus" size={20} color={COLORS.GRAY_1} />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.bigNumber}>{type === 1 ? '3' : '4'}</Text>
         </View>
         {type === 1 ? (
-          <View style={styles.miniContainer}>
-            <Image source={TELEVISION_ICON} />
-            <Text style={styles.mediumNumber}>28%</Text>
-            <Text style={styles.textMiniContainer}>de energia do cômodo</Text>
+          <View style={[styles.miniContainer]}>
+            <Entypo name="tv" size={40} color="black" />
+            <View
+              style={{
+                marginLeft: 15,
+                justifyContent: 'center',
+                flexShrink: 1,
+              }}>
+              <Text
+                style={{
+                  color: COLORS.BLACK,
+                  fontWeight: 'bold',
+                  fontSize: 20,
+                }}>
+                Televisão
+              </Text>
+              <Text style={styles.textMiniContainer}>
+                <Text style={[styles.mediumNumber, { color: COLORS.BLACK }]}>
+                  28%
+                </Text>{' '}
+                do gasto energético detectado no cômodo
+              </Text>
+            </View>
           </View>
         ) : null}
-        <View style={styles.miniContainer}>
-          <Image source={AR_ICON} />
-          <Text style={styles.mediumNumber}>{type === 1 ? '50%' : '25%'}</Text>
-          <Text style={styles.textMiniContainer}>de energia do cômodo</Text>
+        <View style={[styles.miniContainer]}>
+          <MaterialCommunityIcons
+            name="air-conditioner"
+            size={40}
+            color={COLORS.BLACK}
+          />
+          <View
+            style={{ marginLeft: 15, justifyContent: 'center', flexShrink: 1 }}>
+            <Text
+              style={{
+                color: COLORS.BLACK,
+                fontWeight: 'bold',
+                fontSize: 20,
+              }}>
+              Ar Condicionado
+            </Text>
+            <Text style={styles.textMiniContainer}>
+              <Text style={[styles.mediumNumber, { color: COLORS.BLACK }]}>
+                {type === 1 ? '50%' : '25%'}
+              </Text>{' '}
+              ^ do gasto energético detectado no cômodo
+            </Text>
+          </View>
         </View>
         <View style={styles.miniContainer}>
-          <Image source={LAMPADA_ICON} />
-          <Text style={styles.mediumNumber}>{type === 1 ? '22%' : '10%'}</Text>
-          <Text style={styles.textMiniContainer}>de energia do cômodo</Text>
+          <Entypo name="light-bulb" size={40} color={COLORS.BLACK} />
+          <View
+            style={{
+              marginLeft: 15,
+              flexShrink: 1,
+              justifyContent: 'center',
+            }}>
+            <Text
+              style={{ fontSize: 20, fontWeight: 'bold', color: COLORS.BLACK }}>
+              Lâmpada 1
+            </Text>
+            <Text style={styles.textMiniContainer}>
+              <Text style={[styles.mediumNumber, { color: COLORS.BLACK }]}>
+                {type === 1 ? '22%' : '10%'}
+              </Text>{' '}
+              do gasto energético detectado no cômodo
+            </Text>
+          </View>
         </View>
         {type === 2 ? (
           <View style={styles.miniContainer}>
-            <FontAwesome name="shower" size={50} color="black" />
-            <Text style={styles.mediumNumber}>60%</Text>
-            <Text style={styles.textMiniContainer}>de energia do cômodo</Text>
+            <FontAwesome name="shower" size={40} color="black" />
+            <View
+              style={{
+                flexShrink: 1,
+                justifyContent: 'center',
+                marginLeft: 15,
+              }}>
+              <Text
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: 20,
+                  color: COLORS.BLACK,
+                }}>
+                Chuveiro
+              </Text>
+              <Text style={styles.textMiniContainer}>
+                <Text style={[styles.mediumNumber, { color: COLORS.BLACK }]}>
+                  60%
+                </Text>{' '}
+                do gasto energético detectado no cômodo
+              </Text>
+            </View>
           </View>
         ) : null}
         {type === 2 ? (
           <View style={styles.miniContainer}>
-            <MaterialIcons name="computer" size={70} color="black" />
-            <Text style={styles.mediumNumber}>5%</Text>
-            <Text style={styles.textMiniContainer}>de energia do cômodo</Text>
+            <MaterialIcons name="computer" size={40} color="black" />
+            <View
+              style={{
+                flexShrink: 1,
+                marginLeft: 15,
+                justifyContent: 'center',
+              }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  color: COLORS.BLACK,
+                }}>
+                Computador
+              </Text>
+              <Text style={styles.textMiniContainer}>
+                <Text style={[styles.mediumNumber, { color: COLORS.BLACK }]}>
+                  5%
+                </Text>{' '}
+                do gasto energético detectado no cômodo
+              </Text>
+            </View>
           </View>
         ) : null}
         <ConfigModal
@@ -78,8 +189,8 @@ const Comodo = ({ navigation, route }: ComodoProps) => {
           dismiss={() => setModalVisible(false)}
           changeUnit={() => null}
         />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 

@@ -7,21 +7,21 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.WHITE,
     alignItems: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: 30,
     justifyContent: 'center',
   },
 
   text: {
-    textAlign: 'center',
     color: COLORS.GRAY_1,
   },
 
   bigNumber: {
-    fontSize: 60,
+    fontSize: 40,
     fontWeight: 'bold',
     alignSelf: 'center',
-    borderBottomWidth: 5,
-    includeFontPadding: false,
+    marginVertical: 15,
+    // borderBottomWidth: 5,
+    // includeFontPadding: false,
   },
 
   underLine: {
@@ -37,22 +37,21 @@ export const styles = StyleSheet.create({
   },
 
   mediumNumber: {
-    fontSize: 30,
+    fontSize: 16,
     fontWeight: 'bold',
-    alignSelf: 'center',
-    marginBottom: 10,
-    marginHorizontal: 10,
   },
 
   textMiniContainer: {
-    paddingVertical: 25,
-    textAlign: 'center',
     color: COLORS.GRAY_1,
   },
 
   miniContainer: {
     flexDirection: 'row',
-    marginVertical: 30,
-    marginHorizontal: 40,
+    marginBottom: 30,
+    backgroundColor: COLORS.GRAY_3,
+    padding: 15,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    borderRadius: 15,
   },
 });
