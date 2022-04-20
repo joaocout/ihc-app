@@ -19,8 +19,24 @@ type DashboardProps = NativeStackScreenProps<
   'Dashboard'
 >;
 
+function mudaUnidadeMedida(unidade: number, valor: number) {
+  switch (unidade) {
+    case 0:
+      return 'kWz ' + (valor * 100).toFixed(2).toString();
+    case 1:
+      return 'R$ ' + (valor * 100 * 9.5).toFixed(2).toString();
+    case 2:
+      return 'kg/CO2 ' + (valor * 100 * 0.233).toFixed(2).toString();
+    default:
+      return '';
+  }
+}
+
 const Dashboard = ({ navigation }: DashboardProps) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible2, setModalVisible2] = useState(false);
+  const [unidadeMedida1, setunidadeMedida1] = useState(0); //0=kWz - 1=R$ - 2=kg de CO2
+  const [unidadeMedida2, setunidadeMedida2] = useState(0); //0=kWz - 1=R$ - 2=kg de CO2
 
   return (
     <View style={styles.container}>
@@ -32,16 +48,22 @@ const Dashboard = ({ navigation }: DashboardProps) => {
           <Entypo name="cog" size={20} color={COLORS.GRAY_1} />
         </TouchableOpacity>
       </View>
-      <ProgressBar text="R$ 123,50" progress={VALUE_1} />
+      <ProgressBar
+        text={mudaUnidadeMedida(unidadeMedida1, VALUE_1)}
+        progress={VALUE_1}
+      />
       <View style={styles.textContainer}>
         <Text style={[styles.text, { flex: 0.75 }]}>
           Consumo estimado agora em kWh (última hora)
         </Text>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
+        <TouchableOpacity onPress={() => setModalVisible2(true)}>
           <Entypo name="cog" size={20} color={COLORS.GRAY_1} />
         </TouchableOpacity>
       </View>
-      <ProgressBar text="5,5 kWh" progress={VALUE_2} />
+      <ProgressBar
+        text={mudaUnidadeMedida(unidadeMedida2, VALUE_2)}
+        progress={VALUE_2}
+      />
       <TouchableOpacity onPress={() => null}>
         <Text style={styles.linkText}>
           Estimativas incorretas?
@@ -53,6 +75,12 @@ const Dashboard = ({ navigation }: DashboardProps) => {
       <ConfigModal
         visible={modalVisible}
         dismiss={() => setModalVisible(false)}
+        changeUnit={(index) => setunidadeMedida1(index)}
+      />
+      <ConfigModal
+        visible={modalVisible2}
+        dismiss={() => setModalVisible2(false)}
+        changeUnit={(index) => setunidadeMedida2(index)}
       />
     </View>
   );
