@@ -56,4 +56,38 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     color: COLORS.BLUE,
   },
+
+  background: {
+    backgroundColor: '#000000A0',
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 30,
+  },
+
+  icons: {
+    margin: 20,
+    color: COLORS.BLUE,
+  },
+
+  input: {
+    alignSelf: 'stretch',
+    borderColor: COLORS.BLUE,
+    borderWidth: 2,
+    borderRadius: 15,
+    marginBottom: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 15,
+    marginHorizontal: 60,
+    fontSize: 14,
+  },
+
+  boxComodities: {
+    marginVertical: 40,
+    marginHorizontal: 60,
+    borderWidth: 2,
+    borderColor: COLORS.BLUE,
+    borderRadius: 20,
+  },
+  modalCustom: { backgroundColor: COLORS.WHITE, borderRadius: 20 },
 });

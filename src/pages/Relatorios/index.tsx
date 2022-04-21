@@ -5,6 +5,8 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
+  Modal,
+  TextInput,
 } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
@@ -12,6 +14,8 @@ import { styles } from './styles';
 
 import { COLORS } from '../../shared/constants';
 import ConfigModal from '../../components/ConfigModal';
+import { Entypo } from '@expo/vector-icons';
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Relatorios = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -26,9 +30,19 @@ const Relatorios = () => {
           relatórios personalizados, caso deseje.
         </Text>
         <View style={styles.chartContainer}>
-          <Text style={styles.chartTitle}>
-            Consumo registrado nos últimos meses
-          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.chartTitle}>
+              Consumo registrado nos últimos meses
+            </Text>
+            <TouchableOpacity>
+              <Entypo
+                style={{ margin: 4 }}
+                name="export"
+                size={15}
+                color="black"
+              />
+            </TouchableOpacity>
+          </View>
           <LineChart
             data={{
               labels: ['Jan', 'Feb', 'Mar', 'Abr', 'Mai'],
@@ -68,9 +82,19 @@ const Relatorios = () => {
           />
         </View>
         <View style={styles.chartContainer}>
-          <Text style={styles.chartTitle}>
-            Consumo registrado nos últimos dias
-          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.chartTitle}>
+              Consumo registrado nos últimos dias
+            </Text>
+            <TouchableOpacity>
+              <Entypo
+                style={{ margin: 4 }}
+                name="export"
+                size={15}
+                color="black"
+              />
+            </TouchableOpacity>
+          </View>
           <LineChart
             data={{
               labels: ['8/4', '9/4', '10/4', '11/4', '12/4'],
@@ -123,11 +147,64 @@ const Relatorios = () => {
           </Text>
         </TouchableOpacity>
       </ScrollView>
-      <ConfigModal
-        visible={modalVisible}
-        dismiss={() => setModalVisible(false)}
-        changeUnit={() => null}
-      />
+      <Modal transparent visible={modalVisible} animationType="fade">
+        <View style={styles.background}>
+          <View style={styles.modalCustom}>
+            <Text
+              style={[
+                styles.descriptionText,
+                { alignSelf: 'center', marginTop: 20, marginHorizontal: 10 },
+              ]}>
+              Selecione os cômodos e as datas desejados
+            </Text>
+            <View style={styles.boxComodities}>
+              <View style={{ flexDirection: 'row' }}>
+                <FontAwesome
+                  style={styles.icons}
+                  name="bed"
+                  size={48}
+                  color="black"
+                />
+                <MaterialCommunityIcons
+                  style={styles.icons}
+                  name="silverware-fork-knife"
+                  size={48}
+                  color="black"
+                />
+              </View>
+              <View style={{ flexDirection: 'row' }}>
+                <FontAwesome
+                  style={styles.icons}
+                  name="bath"
+                  size={48}
+                  color="black"
+                />
+                <FontAwesome
+                  style={styles.icons}
+                  name="television"
+                  size={48}
+                  color="black"
+                />
+              </View>
+            </View>
+            <TextInput
+              style={styles.input}
+              placeholder="Data de início"
+              placeholderTextColor={COLORS.GRAY_2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Data final"
+              placeholderTextColor={COLORS.GRAY_2}
+            />
+            <TouchableOpacity
+              onPress={() => setModalVisible(false)}
+              style={styles.button}>
+              <Text style={styles.buttonText}>Gerar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
