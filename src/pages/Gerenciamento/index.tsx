@@ -49,9 +49,9 @@ const Gerenciamento = ({ navigation }: GerenciamentoProps) => (
           numberOfLines={1}
           ellipsizeMode="tail"
           style={{ color: COLORS.WHITE }}>
-          Nenhum aparelho ligado
+          4 aparelhos ligados
         </Text>
-        <Text style={{ color: COLORS.WHITE }}>Consumo: 0 kWh</Text>
+        <Text style={{ color: COLORS.WHITE }}>Consumo: 4.1 kWh</Text>
       </View>
     </TouchableOpacity>
     <TouchableOpacity onPress={() => null}>
