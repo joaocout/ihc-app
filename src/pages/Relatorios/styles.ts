@@ -66,6 +66,7 @@ export const styles = StyleSheet.create({
 
   icons: {
     margin: 20,
+    padding: 2,
     color: COLORS.BLUE,
   },
 
@@ -88,6 +89,8 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: COLORS.BLUE,
     borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   modalCustom: { backgroundColor: COLORS.WHITE, borderRadius: 20 },
 });

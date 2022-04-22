@@ -19,6 +19,10 @@ import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Relatorios = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [icon1Selected, seticon1Selected] = useState(false);
+  const [icon2Selected, seticon2Selected] = useState(false);
+  const [icon3Selected, seticon3Selected] = useState(false);
+  const [icon4Selected, seticon4Selected] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -159,32 +163,56 @@ const Relatorios = () => {
             </Text>
             <View style={styles.boxComodities}>
               <View style={{ flexDirection: 'row' }}>
-                <FontAwesome
-                  style={styles.icons}
-                  name="bed"
-                  size={48}
-                  color="black"
-                />
-                <MaterialCommunityIcons
-                  style={styles.icons}
-                  name="silverware-fork-knife"
-                  size={48}
-                  color="black"
-                />
+                <TouchableOpacity
+                  onPress={() => seticon1Selected(!icon1Selected)}>
+                  <FontAwesome
+                    style={[
+                      styles.icons,
+                      { borderWidth: icon1Selected ? 2 : 0 },
+                    ]}
+                    name="bed"
+                    size={48}
+                    color="black"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => seticon2Selected(!icon2Selected)}>
+                  <MaterialCommunityIcons
+                    style={[
+                      styles.icons,
+                      { borderWidth: icon2Selected ? 2 : 0 },
+                    ]}
+                    name="silverware-fork-knife"
+                    size={48}
+                    color="black"
+                  />
+                </TouchableOpacity>
               </View>
               <View style={{ flexDirection: 'row' }}>
-                <FontAwesome
-                  style={styles.icons}
-                  name="bath"
-                  size={48}
-                  color="black"
-                />
-                <FontAwesome
-                  style={styles.icons}
-                  name="television"
-                  size={48}
-                  color="black"
-                />
+                <TouchableOpacity
+                  onPress={() => seticon3Selected(!icon3Selected)}>
+                  <FontAwesome
+                    style={[
+                      styles.icons,
+                      { borderWidth: icon3Selected ? 2 : 0 },
+                    ]}
+                    name="bath"
+                    size={48}
+                    color="black"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => seticon4Selected(!icon4Selected)}>
+                  <FontAwesome
+                    style={[
+                      styles.icons,
+                      { borderWidth: icon4Selected ? 2 : 0 },
+                    ]}
+                    name="television"
+                    size={48}
+                    color="black"
+                  />
+                </TouchableOpacity>
               </View>
             </View>
             <TextInput
