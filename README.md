@@ -1,5 +1,5 @@
 # ihc-app
-Aplicativo de gerenciamento energético, feito com expo, para a disciplina de IHC.
+Aplicativo de gerenciamento energético, feito para a disciplina de IHC.
 
 ### Execução
 Utlizamos [expo](https://expo.dev/), em conjunto com o gerenciador de pacotes [yarn](https://yarnpkg.com/).
