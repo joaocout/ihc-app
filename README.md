@@ -1,12 +1,19 @@
 # ihc-app
 Aplicativo de gerenciamento energético, feito com expo, para a disciplina de IHC.
 
-Obs: Para instalar é necessário ter o yarn instalado em seu terminal.
+### Execução
+Utlizamos [expo](https://expo.dev/), em conjunto com o gerenciador de pacotes [yarn](https://yarnpkg.com/).
 
-cd ihc-app-main
+Para executar, é possível utilizar tanto **yarn**, como **npm**.
 
-yarn install
+Após entrar na pasta do projeto, basta executar:
 
-yarn start
+```yarn install``` ou
+```npm install```\
+Para instalar as dependências.
 
-Após isso abrir o aplicativo expo go e escanear o QR code.
+Seguido de:
+```yarn start``` ou ```npm start```\
+Para executar.
+
+Após isso, basta escanear o QR Code apresentado no terminal, utilizando o aplicativo [Expo Go](https://expo.dev/client), disponível tanto na App Store, como na Google Play.
